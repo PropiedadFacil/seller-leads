@@ -1,0 +1,49 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Lat:</strong>
+  <%= @lead.lat %>
+</p>
+
+<p>
+  <strong>Lng:</strong>
+  <%= @lead.lng %>
+</p>
+
+<p>
+  <strong>Address:</strong>
+  <%= @lead.address %>
+</p>
+
+<p>
+  <strong>Pool type:</strong>
+  <%= @lead.pool_type %>
+</p>
+
+<p>
+  <strong>Kitchen condition:</strong>
+  <%= @lead.kitchen_condition %>
+</p>
+
+<p>
+  <strong>Bathroom condition:</strong>
+  <%= @lead.bathroom_condition %>
+</p>
+
+<p>
+  <strong>Renovated:</strong>
+  <%= @lead.renovated %>
+</p>
+
+<p>
+  <strong>Renovated spent cents:</strong>
+  <%= @lead.renovated_spent_cents %>
+</p>
+
+<p>
+  <strong>Renovated description:</strong>
+  <%= @lead.renovated_description %>
+</p>
+
+<%= link_to 'Edit', edit_lead_path(@lead) %> |
+<%= link_to 'Back', leads_path %>
