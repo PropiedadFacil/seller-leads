@@ -13,5 +13,7 @@ class Lead < ApplicationRecord
 
   validates :bedrooms, :bathrooms, :address,
             :lat, :lng, :built_surface,
+            :user,
             presence: true
+  belongs_to :user
 end

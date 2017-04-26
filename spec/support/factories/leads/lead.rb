@@ -1,5 +1,6 @@
 FactoryGirl.define do
   factory :lead do
+    user
     lat Faker::Address.latitude
     lng Faker::Address.longitude
     address Faker::Address.street_address

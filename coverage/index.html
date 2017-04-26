@@ -14,26 +14,26 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-26T19:14:01-03:00">2017-04-26T19:14:01-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-26T19:28:08-03:00">2017-04-26T19:28:08-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.6%</span></span>
+    (<span class="covered_percent"><span class="green">90.79%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.2
+         1.21
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>40</b> files in total.
-    <b>234</b> relevant lines. 
-    <span class="green"><b>212</b> lines covered</span> and
+    <b>239</b> relevant lines. 
+    <span class="green"><b>217</b> lines covered</span> and
     <span class="red"><b>22</b> lines missed </span>
   </div>
   <table class="file_list">
@@ -143,9 +143,9 @@
       <tr>
         <td class="strong"><a href="#7dde1a035c2a07ec6a191d33195e0a394c74af3c" class="src_link" title="app/models/lead.rb">app/models/lead.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>17</td>
-        <td>5</td>
-        <td>5</td>
+        <td>19</td>
+        <td>6</td>
+        <td>6</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -363,9 +363,9 @@
       <tr>
         <td class="strong"><a href="#cb58419abcf2bceed8f529a8ff8fa4a31c480621" class="src_link" title="spec/models/lead_spec.rb">spec/models/lead_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>34</td>
-        <td>23</td>
-        <td>23</td>
+        <td>39</td>
+        <td>26</td>
+        <td>26</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -417,15 +417,15 @@
         <td>12</td>
         <td>11</td>
         <td>1</td>
-        <td>5.9</td>
+        <td>6.2</td>
       </tr>
       
       <tr>
         <td class="strong"><a href="#75906a8ff775ec0c1958ffc3772bf50eb0b62bc8" class="src_link" title="spec/support/factories/leads/lead.rb">spec/support/factories/leads/lead.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>16</td>
-        <td>14</td>
-        <td>14</td>
+        <td>17</td>
+        <td>15</td>
+        <td>15</td>
         <td>0</td>
         <td>1.0</td>
       </tr>
@@ -1197,8 +1197,8 @@
     <h3>app/models/lead.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>5</b> relevant lines. 
-      <span class="green"><b>5</b> lines covered</span> and
+      <b>6</b> relevant lines. 
+      <span class="green"><b>6</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -1299,10 +1299,22 @@
         <li class="never" data-hits="" data-linenumber="16">
           
           
-          <code class="ruby">            presence: true</code>
+          <code class="ruby">            :user,</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="17">
+          
+          
+          <code class="ruby">            presence: true</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  belongs_to :user</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
           
           
           <code class="ruby">end</code>
@@ -5553,8 +5565,8 @@
     <h3>spec/models/lead_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>23</b> relevant lines. 
-      <span class="green"><b>23</b> lines covered</span> and
+      <b>26</b> relevant lines. 
+      <span class="green"><b>26</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -5760,7 +5772,37 @@
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="34">
+        <li class="covered" data-hits="1" data-linenumber="34">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  it &#39;is invalid without a Customer&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="35">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    lead = FactoryGirl.build(:lead, user_id: nil)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="36">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    expect(lead).to be_invalid</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="37">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="38">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="39">
           
           
           <code class="ruby">end</code>
@@ -6726,8 +6768,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="8">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="8">
+          <span class="hits">22</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -6774,8 +6816,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="16">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="16">
+          <span class="hits">22</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -6798,8 +6840,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="21" data-linenumber="20">
-          <span class="hits">21</span>
+        <li class="covered" data-hits="22" data-linenumber="20">
+          <span class="hits">22</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>
@@ -6849,8 +6891,8 @@
     <h3>spec/support/factories/leads/lead.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>14</b> relevant lines. 
-      <span class="green"><b>14</b> lines covered</span> and
+      <b>15</b> relevant lines. 
+      <span class="green"><b>15</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6873,82 +6915,88 @@
         <li class="covered" data-hits="1" data-linenumber="3">
           <span class="hits">1</span>
           
-          <code class="ruby">    lat Faker::Address.latitude</code>
+          <code class="ruby">    user</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">    lng Faker::Address.longitude</code>
+          <code class="ruby">    lat Faker::Address.latitude</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">    address Faker::Address.street_address</code>
+          <code class="ruby">    lng Faker::Address.longitude</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="6">
           <span class="hits">1</span>
           
-          <code class="ruby">    pool_type Lead.pool_types.keys.sample</code>
+          <code class="ruby">    address Faker::Address.street_address</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="7">
           <span class="hits">1</span>
           
-          <code class="ruby">    kitchen_condition Lead.kitchen_conditions.keys.sample</code>
+          <code class="ruby">    pool_type Lead.pool_types.keys.sample</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="8">
           <span class="hits">1</span>
           
-          <code class="ruby">    bathroom_condition Lead.bathroom_conditions.keys.sample</code>
+          <code class="ruby">    kitchen_condition Lead.kitchen_conditions.keys.sample</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">    renovated true</code>
+          <code class="ruby">    bathroom_condition Lead.bathroom_conditions.keys.sample</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">    renovated_spent_cents Faker::Number.number(10)</code>
+          <code class="ruby">    renovated true</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="11">
           <span class="hits">1</span>
           
-          <code class="ruby">    renovated_description Faker::Lorem.sentence(Faker::Number.digit.to_i)</code>
+          <code class="ruby">    renovated_spent_cents Faker::Number.number(10)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
-          <code class="ruby">    bedrooms Faker::Number.digit.to_i</code>
+          <code class="ruby">    renovated_description Faker::Lorem.sentence(Faker::Number.digit.to_i)</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="13">
           <span class="hits">1</span>
           
-          <code class="ruby">    bathrooms Faker::Number.digit.to_i</code>
+          <code class="ruby">    bedrooms Faker::Number.digit.to_i</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="14">
           <span class="hits">1</span>
           
+          <code class="ruby">    bathrooms Faker::Number.digit.to_i</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
           <code class="ruby">    built_surface Faker::Number.number(3)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="16">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="16">
+        <li class="never" data-hits="" data-linenumber="17">
           
           
           <code class="ruby">end</code>
