@@ -7,7 +7,7 @@ class WizardController < ApplicationController
   def locate; end
 
   def validate_step
-    current_step = params[:current_step] || Wizard::Lead::STEPS.first
+    current_step = Wizard::Lead::STEPS.first
     @lead_wizard = wizard_lead_for_step(current_step)
     session[:lead_attributes] = @lead_wizard.lead.attributes
     if @lead_wizard.valid?
