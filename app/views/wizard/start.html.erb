@@ -1,0 +1,23 @@
+<div class="block block-inverse block-fill-height app-header p-0"
+     style="background-image: url(<%= asset_path 'start-header.jpg' %>);">
+
+  <%= render 'application/header' %>
+
+  <div class="block-xs-middle pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-lg-6">
+          <h1 class="block-titleData frequency">Let's get started</h1>
+          <p class="lead mb-4">Please enter your address.
+          <form class="form-inline" action="<%= locate_path %>">
+            <div class="form-group pr-2">
+              <label for="address" class="sr-only">Street, city, state</label>
+              <input type="text" class="form-control" name="address" id="address" placeholder="Ex. 746 E. Main...">
+            </div>
+            <button type="submit" class="btn btn-success">Find my home</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

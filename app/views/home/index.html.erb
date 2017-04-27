@@ -1,33 +1,7 @@
 <div class="block block-inverse block-fill-height app-header p-0"
      style="background-image: url(<%= asset_path 'header3.jpg'%>);">
 
-  <div class="container py-4 fixed-top app-navbar">
-    <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
-      <button
-        class="navbar-toggler navbar-toggler-right hidden-md-up"
-        type="button"
-        data-target="#stage"
-        data-toggle="stage"
-        data-distance="-250">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <a class="navbar-brand mr-auto" href="index.html">
-        <%= image_tag 'logo-white.png', style: 'height: 60px;'%>
-      </a>
-
-      <div class="hidden-sm-down text-uppercase">
-        <ul class="navbar-nav">
-          <li class="nav-item px-1 ">
-            <a class="nav-link" href="start.html">Get Started</a>
-          </li>
-          <li class="nav-item px-1">
-            <a class="nav-link btn btn-primary" href="#">Client Access</a>
-          </li>
-        </ul>
-      </div>
-    </nav>
-  </div>
+  <%= render 'application/header' %>
 
 
   <div class="block-xs-middle pb-5">
@@ -36,7 +10,7 @@
         <div class="col-sm-10 col-lg-6">
           <h1 class="block-titleData frequency">Move, your way</h1>
           <p class="lead mb-4">Receive a cash offer. <span class="text-muted">Skip the hassle and uncertainty.</span></p>
-          <a href="start.html" class="btn btn-success btn-lg">Get your cash offer today</a>
+          <a href="<%= start_path %>" class="btn btn-success btn-lg">Get your cash offer today</a>
         </div>
       </div>
     </div>
@@ -65,7 +39,7 @@
             <p>No showings, repairs, or months of uncertainty.</p>
           </div>
         </div>
-        <a href="start.html" class="btn btn-success">Get Started</a>
+        <a href="<%= start_path %>" class="btn btn-success">Get Started</a>
       </div>
     </div>
 
@@ -141,7 +115,7 @@
         <p class="lead">"I will make you an AS-IS cash offer on your house within 24 hours. I buy houses in any condition, any size, and any situation. Whether it is a total fixer upper or in perfect condition, there is no easier way to sell your home fast!" - <strong>Doug Hopkins</strong></p>
 
 
-        <a href="start.html" class="btn btn-lg btn-success btn-block mt-5">
+        <a href="<%= start_path %>" class="btn btn-lg btn-success btn-block mt-5">
           Get your cash offer today
         </a>
       </div>

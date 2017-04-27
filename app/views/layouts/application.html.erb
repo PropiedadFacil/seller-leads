@@ -3,7 +3,7 @@
   <head>
     <title>Doug Hopkins | Receive a cash offer for your home.</title>
     <%= csrf_meta_tags %>
-
+    <%= favicon_link_tag 'favicon.ico' %>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -22,7 +22,7 @@
       <ul class="nav nav-bordered nav-stacked flex-column">
         <li class="nav-header">Main</li>
         <li class="nav-item">
-          <a class="nav-link" href="start.html">Get Started</a>
+          <a class="nav-link" href="<%= start_path %>">Get Started</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="#">Client Access</a>
