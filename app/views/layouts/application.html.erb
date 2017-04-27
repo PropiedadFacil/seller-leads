@@ -1,14 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
-    <title>SellerLeads</title>
+    <title>Doug Hopkins | Receive a cash offer for your home.</title>
     <%= csrf_meta_tags %>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keywords" content="">
+    <meta name="author" content="">
+    <link href='https://fonts.googleapis.com/css?family=Lora:400,400italic|Work+Sans:300,400,500,600' rel='stylesheet' type='text/css'>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
     <%= javascript_include_tag 'application' %>
+
   </head>
 
   <body>
-    <%= yield %>
+    <div class="stage-shelf stage-shelf-right hidden" id="sidebar">
+      <ul class="nav nav-bordered nav-stacked flex-column">
+        <li class="nav-header">Main</li>
+        <li class="nav-item">
+          <a class="nav-link" href="start.html">Get Started</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#">Client Access</a>
+        </li>
+      </ul>
+    </div>
+    <div class="stage" id="stage">
+      <%= yield %>
+    </div>
+
   </body>
 </html>

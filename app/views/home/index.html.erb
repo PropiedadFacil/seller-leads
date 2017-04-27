@@ -1,2 +1,151 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<div class="block block-inverse block-fill-height app-header p-0"
+     style="background-image: url(<%= asset_path 'header3.jpg'%>);">
+
+  <div class="container py-4 fixed-top app-navbar">
+    <nav class="navbar navbar-transparent navbar-padded navbar-toggleable-sm">
+      <button
+        class="navbar-toggler navbar-toggler-right hidden-md-up"
+        type="button"
+        data-target="#stage"
+        data-toggle="stage"
+        data-distance="-250">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <a class="navbar-brand mr-auto" href="index.html">
+        <%= image_tag 'logo-white.png', style: 'height: 60px;'%>
+      </a>
+
+      <div class="hidden-sm-down text-uppercase">
+        <ul class="navbar-nav">
+          <li class="nav-item px-1 ">
+            <a class="nav-link" href="start.html">Get Started</a>
+          </li>
+          <li class="nav-item px-1">
+            <a class="nav-link btn btn-primary" href="#">Client Access</a>
+          </li>
+        </ul>
+      </div>
+    </nav>
+  </div>
+
+
+  <div class="block-xs-middle pb-5">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-10 col-lg-6">
+          <h1 class="block-titleData frequency">Move, your way</h1>
+          <p class="lead mb-4">Receive a cash offer. <span class="text-muted">Skip the hassle and uncertainty.</span></p>
+          <a href="start.html" class="btn btn-success btn-lg">Get your cash offer today</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="block block-secondary app-iphone-block">
+  <div class="container">
+    <div class="row app-align-center">
+
+      <div class="col-sm-5 hidden-sm-down">
+        <%= image_tag 'dh-photo.jpg', class:"app-iphone", style: 'width: 100%' %>
+      </div>
+
+      <div class="col-md-6 offset-md-1 col-sm-12 offset-sm-0">
+        <h6 class="text-muted text-uppercase">Why Doug?</h6>
+        <h3>Doug Hopkins has been recognized as one of the top buyers of properties in the western United States.</h3>
+        <p class="lead mb-4"><strong>Doug has bought and sold well over 10,000 homes in his career.</strong> His television appearances on the Discovery Channel's hit series Property Wars has made him one of America’s Favorite Real Estate Agents. </p>
+        <div class="row hidden-md-down">
+          <div class="col-sm-6 mb-3">
+            <h5>Cash Offer</h5>
+            <p> No obligation cash offer on your home in under 24 hrs.</p>
+          </div>
+          <div class="col-sm-6">
+            <h5>No Hassle</h5>
+            <p>No showings, repairs, or months of uncertainty.</p>
+          </div>
+        </div>
+        <a href="start.html" class="btn btn-success">Get Started</a>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="block app-ribbon py-5">
+  <div class="container text-xs-center">
+    <%= image_tag 'cnbc-logo.png', style:'height: 80px;'%>
+    <%= image_tag 'bweek.png', style:'height: 40px;'%>
+    <%= image_tag 'DC-white.png', style:'height: 50px;'%>
+  </div>
+</div>
+
+<div class="block block-secondary app-block-marketing-grid">
+  <div class="container text-xs-center">
+
+    <div class="row mb-5">
+      <div class="col-xs-10 offset-xs-1 col-sm-8 offset-sm-2 col-lg-6 offset-lg-3">
+        <h6 class="text-muted text-uppercase mb-2">It's easy</h6>
+        <h3  class="mb-4">This is how it works</h3>
+      </div>
+    </div>
+
+    <div class="row app-marketing-grid">
+      <div class="col-md-4 px-4 mb-5">
+        <%= image_tag 'startup-9.svg', class:"mb-1" %>
+        <p><strong>Doug Hopkins</strong> will send you a cash offer. </p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <%= image_tag 'startup-12.svg', class: 'mb-1'%>
+        <p><strong>You decide</strong> if you will accept the offer. </p>
+      </div>
+      <div class="col-md-4 px-4 mb-5">
+        <%= image_tag 'startup-14.svg', class: 'mb-1'%>
+        <p>Doug Hopkins <strong>pays cash</strong>.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="block app-price-plans">
+  <div class="container text-center">
+
+    <div class="row mb-5">
+      <div class="col-md-8 offset-md-2 col-lg-6 offset-lg-3 pb-5">
+        <h6 class="text-muted text-uppercase mb-2">Deal?</h6>
+        <h3>Here is what to expect</h3>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-md-4 px-4 pb-2 mb-5">
+        <div class="px-2 mb-2">
+          <h6 class="text-muted text-uppercase mb-4">$0 cost to you.</h6>
+          <h1>No Fees</h1>
+          <p class="pb-2">or hidden charges</p>
+        </div>
+
+        <ul class="list-unstyled list-bordered text-xs-left my-4">
+          <li class="py-4">No commissions at all.</li>
+          <li class="py-4">No repairs needed.</li>
+          <li class="py-4">Transparent process.</li>
+          <li class="py-4">Excellent customer support.</li>
+        </ul>
+
+      </div>
+
+      <div class="col-md-7 offset-md-1 px-8 pb-2 mb-5 text-xs-left">
+        <h6 class="text-muted text-uppercase">Our team takes care of everything</h6>
+        <br>
+        <p class="lead">"I will make you an AS-IS cash offer on your house within 24 hours. I buy houses in any condition, any size, and any situation. Whether it is a total fixer upper or in perfect condition, there is no easier way to sell your home fast!" - <strong>Doug Hopkins</strong></p>
+
+
+        <a href="start.html" class="btn btn-lg btn-success btn-block mt-5">
+          Get your cash offer today
+        </a>
+      </div>
+    </div>
+
+  </div>
+</div>
