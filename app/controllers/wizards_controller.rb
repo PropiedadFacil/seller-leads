@@ -2,6 +2,13 @@
 class WizardsController < ApplicationController
   before_action :load_lead_wizard, except: %i[validate_step]
 
+  def step2
+    geocoder = Geocoder.new(@lead_wizard.lead.address)
+    geocoder.geocode
+    @lat = geocoder.lat
+    @lng = geocoder.lng
+  end
+
   def validate_step
     current_step = params[:current_step]
     @lead_wizard = wizard_lead_for_step(current_step)
@@ -41,9 +48,9 @@ class WizardsController < ApplicationController
 
   def wizard_lead_for_step(step)
     raise InvalidStep unless step.in?(Wizard::Lead::STEPS)
-    lead_wizard = "Wizard::Lead::#{step.camelize}"
-                  .constantize
-                  .new(session[:lead_attributes])
+    "Wizard::Lead::#{step.camelize}"
+      .constantize
+      .new(session[:lead_attributes])
   end
 
   def lead_wizard_params

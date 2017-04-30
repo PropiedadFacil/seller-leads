@@ -23,6 +23,9 @@ gem 'pundit'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
 
+# Simple http requests
+gem 'faraday'
+
 # Storing env variables easily and securely
 gem 'figaro'
 
@@ -38,6 +41,7 @@ group :development, :test do
   gem 'dotenv-rails'
   gem 'factory_girl'
   gem 'faker'
+  gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
   gem 'selenium-webdriver'
   gem 'shoulda-matchers'

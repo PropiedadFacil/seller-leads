@@ -536,6 +536,22 @@
         null,
         null
       ],
+      "/Users/boris/Sites/seller-leads/app/helpers/application_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/boris/Sites/seller-leads/app/helpers/home_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/boris/Sites/seller-leads/app/helpers/leads_helper.rb": [
+        1,
+        null
+      ],
+      "/Users/boris/Sites/seller-leads/app/helpers/wizard_helper.rb": [
+        1,
+        null
+      ],
       "/Users/boris/Sites/seller-leads/config/routes.rb": [
         1,
         1,
@@ -587,7 +603,7 @@
         1,
         null,
         1,
-        11,
+        12,
         null,
         null,
         null,
@@ -644,22 +660,6 @@
         1,
         null
       ],
-      "/Users/boris/Sites/seller-leads/app/helpers/application_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/boris/Sites/seller-leads/app/helpers/home_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/boris/Sites/seller-leads/app/helpers/leads_helper.rb": [
-        1,
-        null
-      ],
-      "/Users/boris/Sites/seller-leads/app/helpers/wizard_helper.rb": [
-        1,
-        null
-      ],
       "/Users/boris/Sites/seller-leads/spec/support/database_cleaner.rb": [
         1,
         null,
@@ -668,7 +668,7 @@
         null,
         null,
         1,
-        29,
+        30,
         null,
         null,
         1,
@@ -676,11 +676,11 @@
         null,
         null,
         1,
-        29,
+        30,
         null,
         null,
         1,
-        29,
+        30,
         null,
         null,
         null,
@@ -898,7 +898,13 @@
         null,
         1,
         1,
+        1,
+        1,
         null,
+        null,
+        1,
+        1,
+        1,
         null,
         null,
         null
@@ -907,6 +913,13 @@
         null,
         1,
         1,
+        null,
+        1,
+        2,
+        2,
+        2,
+        2,
+        null,
         null,
         1,
         3,
@@ -938,7 +951,7 @@
         1,
         null,
         1,
-        8,
+        9,
         null,
         null,
         1,
@@ -946,10 +959,10 @@
         null,
         null,
         1,
-        11,
-        11,
+        12,
         null,
         null,
+        12,
         null,
         null,
         1,
@@ -963,17 +976,6 @@
         null,
         null,
         1,
-        null
-      ],
-      "/Users/boris/Sites/seller-leads/spec/features/address_display_spec.rb": [
-        1,
-        1,
-        0,
-        0,
-        0,
-        null,
-        0,
-        null,
         null
       ],
       "/Users/boris/Sites/seller-leads/spec/features/start_redirection_spec.rb": [
@@ -1229,8 +1231,36 @@
         0,
         null,
         null
+      ],
+      "/Users/boris/Sites/seller-leads/app/services/geocoder.rb": [
+        null,
+        1,
+        1,
+        1,
+        2,
+        null,
+        null,
+        1,
+        2,
+        2,
+        null,
+        null,
+        1,
+        null,
+        1,
+        null,
+        1,
+        2,
+        null,
+        2,
+        2,
+        2,
+        2,
+        2,
+        null,
+        null
       ]
     },
-    "timestamp": 1493576191
+    "timestamp": 1493595086
   }
 }

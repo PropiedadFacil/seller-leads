@@ -14,27 +14,27 @@
       <img src="./assets/0.10.0/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-30T15:16:31-03:00">2017-04-30T15:16:31-03:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2017-04-30T20:31:26-03:00">2017-04-30T20:31:26-03:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">90.55%</span></span>
+    (<span class="covered_percent"><span class="green">92.24%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         1.38
+         1.43
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>43</b> files in total.
-    <b>328</b> relevant lines. 
-    <span class="green"><b>297</b> lines covered</span> and
-    <span class="red"><b>31</b> lines missed </span>
+    <b>348</b> relevant lines. 
+    <span class="green"><b>321</b> lines covered</span> and
+    <span class="red"><b>27</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -82,10 +82,10 @@
       
       <tr>
         <td class="strong"><a href="#b5225ae81e692598b8a95f0572be522027dd021e" class="src_link" title="app/controllers/wizards_controller.rb">app/controllers/wizards_controller.rb</a></td>
-        <td class="yellow strong">83.33 %</td>
-        <td>60</td>
+        <td class="yellow strong">85.71 %</td>
+        <td>67</td>
+        <td>35</td>
         <td>30</td>
-        <td>25</td>
         <td>5</td>
         <td>2.2</td>
       </tr>
@@ -177,7 +177,17 @@
         <td>24</td>
         <td>24</td>
         <td>0</td>
-        <td>1.4</td>
+        <td>1.5</td>
+      </tr>
+      
+      <tr>
+        <td class="strong"><a href="#46aefb200acc1d3f433a176919fd60f7ed377769" class="src_link" title="app/services/geocoder.rb">app/services/geocoder.rb</a></td>
+        <td class="green strong">100.0 %</td>
+        <td>26</td>
+        <td>16</td>
+        <td>16</td>
+        <td>0</td>
+        <td>1.6</td>
       </tr>
       
       <tr>
@@ -353,21 +363,11 @@
       <tr>
         <td class="strong"><a href="#c12905904dc427cf1f5a6ebeff7279e22d24977e" class="src_link" title="spec/controllers/wizards_controller_spec.rb">spec/controllers/wizards_controller_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
+        <td>14</td>
         <td>8</td>
-        <td>3</td>
-        <td>3</td>
+        <td>8</td>
         <td>0</td>
         <td>1.0</td>
-      </tr>
-      
-      <tr>
-        <td class="strong"><a href="#fc904ac03dbbfe6de5b92e3f94056cb3abcf5182" class="src_link" title="spec/features/address_display_spec.rb">spec/features/address_display_spec.rb</a></td>
-        <td class="red strong">33.33 %</td>
-        <td>9</td>
-        <td>6</td>
-        <td>2</td>
-        <td>4</td>
-        <td>0.3</td>
       </tr>
       
       <tr>
@@ -447,7 +447,7 @@
         <td>12</td>
         <td>11</td>
         <td>1</td>
-        <td>7.9</td>
+        <td>8.2</td>
       </tr>
       
       <tr>
@@ -1039,10 +1039,10 @@
         <div class="source_table" id="b5225ae81e692598b8a95f0572be522027dd021e">
   <div class="header">
     <h3>app/controllers/wizards_controller.rb</h3>
-    <h4><span class="yellow">83.33 %</span> covered</h4>
+    <h4><span class="yellow">85.71 %</span> covered</h4>
     <div>
-      <b>30</b> relevant lines. 
-      <span class="green"><b>25</b> lines covered</span> and
+      <b>35</b> relevant lines. 
+      <span class="green"><b>30</b> lines covered</span> and
       <span class="red"><b>5</b> lines missed.</span>
     </div>
   </div>
@@ -1077,253 +1077,253 @@
         <li class="covered" data-hits="1" data-linenumber="5">
           <span class="hits">1</span>
           
-          <code class="ruby">  def validate_step</code>
+          <code class="ruby">  def step2</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="6">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="6">
+          <span class="hits">2</span>
           
-          <code class="ruby">    current_step = params[:current_step]</code>
+          <code class="ruby">    geocoder = Geocoder.new(@lead_wizard.lead.address)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="7">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="7">
+          <span class="hits">2</span>
           
-          <code class="ruby">    @lead_wizard = wizard_lead_for_step(current_step)</code>
+          <code class="ruby">    geocoder.geocode</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="8">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="8">
+          <span class="hits">2</span>
           
-          <code class="ruby">    @lead_wizard.lead.attributes = lead_wizard_params</code>
+          <code class="ruby">    @lat = geocoder.lat</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="9">
-          <span class="hits">3</span>
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
           
-          <code class="ruby">    session[:lead_attributes] = @lead_wizard.lead.attributes</code>
+          <code class="ruby">    @lng = geocoder.lng</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="10">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="10">
           
-          <code class="ruby">    if @lead_wizard.valid?</code>
+          
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="11">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="11">
           
-          <code class="ruby">      next_step = wizard_lead_next_step(current_step)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="12">
           <span class="hits">1</span>
           
+          <code class="ruby">  def validate_step</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="13">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    current_step = params[:current_step]</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="14">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @lead_wizard = wizard_lead_for_step(current_step)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="15">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    @lead_wizard.lead.attributes = lead_wizard_params</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="16">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    session[:lead_attributes] = @lead_wizard.lead.attributes</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="17">
+          <span class="hits">3</span>
+          
+          <code class="ruby">    if @lead_wizard.valid?</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="18">
+          <span class="hits">1</span>
+          
+          <code class="ruby">      next_step = wizard_lead_next_step(current_step)</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="19">
+          <span class="hits">1</span>
+          
           <code class="ruby">      create &amp;&amp; return unless next_step</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="13">
+        <li class="never" data-hits="" data-linenumber="20">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="14">
+        <li class="covered" data-hits="1" data-linenumber="21">
           <span class="hits">1</span>
           
           <code class="ruby">      redirect_to action: next_step</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="15">
+        <li class="never" data-hits="" data-linenumber="22">
           
           
           <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="2" data-linenumber="16">
+        <li class="covered" data-hits="2" data-linenumber="23">
           <span class="hits">2</span>
           
           <code class="ruby">      render current_step</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="17">
+        <li class="never" data-hits="" data-linenumber="24">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="18">
+        <li class="never" data-hits="" data-linenumber="25">
           
           
           <code class="ruby">  end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="19">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="20">
-          <span class="hits">1</span>
-          
-          <code class="ruby">  def create</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="21">
-          
-          
-          <code class="ruby">    if @lead_wizard.lead.save</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="22">
-          
-          
-          <code class="ruby">      session[:lead_attributes] = nil</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="23">
-          
-          
-          <code class="ruby">      redirect_to root_path, notice: &#39;Lead succesfully created!&#39;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="24">
-          
-          
-          <code class="ruby">    else</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="25">
-          
-          
-          <code class="ruby">      redirect_to(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="26">
           
           
-          <code class="ruby">        { action: Wizard::Lead::STEPS.first },</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="27">
+        <li class="covered" data-hits="1" data-linenumber="27">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        alert: &#39;There were a problem when creating the lead.&#39;</code>
+          <code class="ruby">  def create</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="28">
+        <li class="missed" data-hits="0" data-linenumber="28">
           
           
-          <code class="ruby">      )</code>
+          <code class="ruby">    if @lead_wizard.lead.save</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="29">
+        <li class="missed" data-hits="0" data-linenumber="29">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      session[:lead_attributes] = nil</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="30">
+        <li class="missed" data-hits="0" data-linenumber="30">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">      redirect_to root_path, notice: &#39;Lead succesfully created!&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="31">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    else</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="32">
-          <span class="hits">1</span>
+        <li class="missed" data-hits="0" data-linenumber="32">
           
-          <code class="ruby">  private</code>
+          
+          <code class="ruby">      redirect_to(</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="33">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        { action: Wizard::Lead::STEPS.first },</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="34">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="34">
           
-          <code class="ruby">  def load_lead_wizard</code>
+          
+          <code class="ruby">        alert: &#39;There were a problem when creating the lead.&#39;</code>
         </li>
       
-        <li class="covered" data-hits="8" data-linenumber="35">
-          <span class="hits">8</span>
+        <li class="never" data-hits="" data-linenumber="35">
           
-          <code class="ruby">    @lead_wizard = wizard_lead_for_step(action_name)</code>
+          
+          <code class="ruby">      )</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="36">
           
           
-          <code class="ruby">  end</code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="37">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">  end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="38">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="38">
           
-          <code class="ruby">  def wizard_lead_next_step(step)</code>
+          
+          <code class="ruby"></code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="39">
           <span class="hits">1</span>
           
-          <code class="ruby">    Wizard::Lead::STEPS[Wizard::Lead::STEPS.index(step) + 1]</code>
+          <code class="ruby">  private</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="40">
           
           
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="41">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def load_lead_wizard</code>
+        </li>
+      
+        <li class="covered" data-hits="9" data-linenumber="42">
+          <span class="hits">9</span>
+          
+          <code class="ruby">    @lead_wizard = wizard_lead_for_step(action_name)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="43">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="44">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="42">
+        <li class="covered" data-hits="1" data-linenumber="45">
           <span class="hits">1</span>
           
-          <code class="ruby">  def wizard_lead_for_step(step)</code>
+          <code class="ruby">  def wizard_lead_next_step(step)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="43">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="1" data-linenumber="46">
+          <span class="hits">1</span>
           
-          <code class="ruby">    raise InvalidStep unless step.in?(Wizard::Lead::STEPS)</code>
-        </li>
-      
-        <li class="covered" data-hits="11" data-linenumber="44">
-          <span class="hits">11</span>
-          
-          <code class="ruby">    lead_wizard = &quot;Wizard::Lead::#{step.camelize}&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="45">
-          
-          
-          <code class="ruby">                  .constantize</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="46">
-          
-          
-          <code class="ruby">                  .new(session[:lead_attributes])</code>
+          <code class="ruby">    Wizard::Lead::STEPS[Wizard::Lead::STEPS.index(step) + 1]</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="47">
@@ -1341,70 +1341,112 @@
         <li class="covered" data-hits="1" data-linenumber="49">
           <span class="hits">1</span>
           
-          <code class="ruby">  def lead_wizard_params</code>
+          <code class="ruby">  def wizard_lead_for_step(step)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="covered" data-hits="12" data-linenumber="50">
+          <span class="hits">12</span>
           
-          
-          <code class="ruby">    params.require(:lead_wizard)</code>
+          <code class="ruby">    raise InvalidStep unless step.in?(Wizard::Lead::STEPS)</code>
         </li>
       
-        <li class="covered" data-hits="3" data-linenumber="51">
-          <span class="hits">3</span>
+        <li class="never" data-hits="" data-linenumber="51">
           
-          <code class="ruby">          .permit(:email, :first_name, :last_name, :address,</code>
+          
+          <code class="ruby">    &quot;Wizard::Lead::#{step.camelize}&quot;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="52">
           
           
-          <code class="ruby">                  :zip_code, :city, :country, :phone_number)</code>
+          <code class="ruby">      .constantize</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="53">
+        <li class="covered" data-hits="12" data-linenumber="53">
+          <span class="hits">12</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      .new(session[:lead_attributes])</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="54">
           
           
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="55">
+          
+          
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="55">
+        <li class="covered" data-hits="1" data-linenumber="56">
           <span class="hits">1</span>
           
-          <code class="ruby">  def well_formated_address(address)</code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="56">
-          
-          
-          <code class="ruby">    address.include?(&#39;,&#39;)</code>
+          <code class="ruby">  def lead_wizard_params</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="57">
           
           
+          <code class="ruby">    params.require(:lead_wizard)</code>
+        </li>
+      
+        <li class="covered" data-hits="3" data-linenumber="58">
+          <span class="hits">3</span>
+          
+          <code class="ruby">          .permit(:email, :first_name, :last_name, :address,</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="59">
+          
+          
+          <code class="ruby">                  :zip_code, :city, :country, :phone_number)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="60">
+          
+          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="58">
+        <li class="never" data-hits="" data-linenumber="61">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="59">
+        <li class="covered" data-hits="1" data-linenumber="62">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def well_formated_address(address)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="63">
+          
+          
+          <code class="ruby">    address.include?(&#39;,&#39;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="64">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="65">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
           <code class="ruby">  class InvalidStep &lt; StandardError; end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="60">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby">end</code>
@@ -1914,8 +1956,8 @@
           <code class="ruby">      def initialize(lead_attributes)</code>
         </li>
       
-        <li class="covered" data-hits="11" data-linenumber="14">
-          <span class="hits">11</span>
+        <li class="covered" data-hits="12" data-linenumber="14">
+          <span class="hits">12</span>
           
           <code class="ruby">        @lead = ::Lead.new(lead_attributes)</code>
         </li>
@@ -2119,6 +2161,180 @@
         </li>
       
         <li class="never" data-hits="" data-linenumber="48">
+          
+          
+          <code class="ruby">end</code>
+        </li>
+      
+    </ol>
+  </pre>
+</div>
+      
+        <div class="source_table" id="46aefb200acc1d3f433a176919fd60f7ed377769">
+  <div class="header">
+    <h3>app/services/geocoder.rb</h3>
+    <h4><span class="green">100.0 %</span> covered</h4>
+    <div>
+      <b>16</b> relevant lines. 
+      <span class="green"><b>16</b> lines covered</span> and
+      <span class="red"><b>0</b> lines missed.</span>
+    </div>
+  </div>
+  
+  <pre>
+    <ol>
+      
+        <li class="never" data-hits="" data-linenumber="1">
+          
+          
+          <code class="ruby"># Service object that parses the address</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="2">
+          <span class="hits">1</span>
+          
+          <code class="ruby">class Geocoder</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="3">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  attr_reader :lat, :lng, :address</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="4">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def initialize(address)</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="5">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @address = address</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="6">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="7">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="8">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def geocode</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="9">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    return nil unless @address</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="10">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    google_geocode</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="11">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="12">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="13">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  private</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="14">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="15">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def mapbox_geocode; end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="16">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="17">
+          <span class="hits">1</span>
+          
+          <code class="ruby">  def google_geocode</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="18">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    url = &quot;https://maps.googleapis.com/maps/api/geocode/json?address=#{@address}</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="19">
+          
+          
+          <code class="ruby">           &amp;key=#{Figaro.env[:google_maps_key]}&quot;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="20">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    response = JSON.parse(Faraday.get(url).body).with_indifferent_access</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="21">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    return unless response[:status] != &#39;ZERO_RESULTS&#39;</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="22">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    location = response[:results][0][:geometry][:location]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="23">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @lat = location[:lat]</code>
+        </li>
+      
+        <li class="covered" data-hits="2" data-linenumber="24">
+          <span class="hits">2</span>
+          
+          <code class="ruby">    @lng = location[:lng]</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="25">
+          
+          
+          <code class="ruby">  end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="26">
           
           
           <code class="ruby">end</code>
@@ -6057,8 +6273,8 @@
     <h3>spec/controllers/wizards_controller_spec.rb</h3>
     <h4><span class="green">100.0 %</span> covered</h4>
     <div>
-      <b>3</b> relevant lines. 
-      <span class="green"><b>3</b> lines covered</span> and
+      <b>8</b> relevant lines. 
+      <span class="green"><b>8</b> lines covered</span> and
       <span class="red"><b>0</b> lines missed.</span>
     </div>
   </div>
@@ -6087,100 +6303,64 @@
         <li class="covered" data-hits="1" data-linenumber="4">
           <span class="hits">1</span>
           
-          <code class="ruby">  describe &#39;GET locate step&#39; do</code>
+          <code class="ruby">  describe &#39;GET #step2&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="5">
+        <li class="covered" data-hits="1" data-linenumber="5">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">    it &#39;assigns a proper address object&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="6">
+        <li class="covered" data-hits="1" data-linenumber="6">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">  end</code>
+          <code class="ruby">      session[:lead_attributes] = {</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="7">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">        address: &#39;7331 E Bonita Dr, Scottsdale&#39;</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="8">
           
           
-          <code class="ruby">end</code>
+          <code class="ruby">      }</code>
         </li>
       
-    </ol>
-  </pre>
-</div>
-      
-        <div class="source_table" id="fc904ac03dbbfe6de5b92e3f94056cb3abcf5182">
-  <div class="header">
-    <h3>spec/features/address_display_spec.rb</h3>
-    <h4><span class="red">33.33 %</span> covered</h4>
-    <div>
-      <b>6</b> relevant lines. 
-      <span class="green"><b>2</b> lines covered</span> and
-      <span class="red"><b>4</b> lines missed.</span>
-    </div>
-  </div>
-  
-  <pre>
-    <ol>
-      
-        <li class="covered" data-hits="1" data-linenumber="1">
+        <li class="covered" data-hits="1" data-linenumber="9">
           <span class="hits">1</span>
           
-          <code class="ruby">feature &#39;Locate address step&#39; do</code>
+          <code class="ruby">      get :step2</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="2">
+        <li class="covered" data-hits="1" data-linenumber="10">
           <span class="hits">1</span>
           
-          <code class="ruby">  xit scenario &#39;User submits a formatted address&#39; do</code>
+          <code class="ruby">      expect(assigns(:lat)).to eq(33.511537)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="3">
+        <li class="covered" data-hits="1" data-linenumber="11">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">    visit &quot;/locate&quot;</code>
+          <code class="ruby">      expect(assigns(:lng)).to eq(-111.921993)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="4">
+        <li class="never" data-hits="" data-linenumber="12">
           
           
-          <code class="ruby">    fill_in &quot;Name&quot;, :with =&gt; &quot;My Widget&quot;</code>
+          <code class="ruby">    end</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="5">
-          
-          
-          <code class="ruby">    click_button &quot;Create Widget&quot;</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="6">
-          
-          
-          <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="7">
-          
-          
-          <code class="ruby">    expect(page).to have_text(&quot;Widget was successfully created.&quot;)</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="8">
+        <li class="never" data-hits="" data-linenumber="13">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="9">
+        <li class="never" data-hits="" data-linenumber="14">
           
           
           <code class="ruby">end</code>
@@ -7794,8 +7974,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="8">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="30" data-linenumber="8">
+          <span class="hits">30</span>
           
           <code class="ruby">    DatabaseCleaner.strategy = :transaction</code>
         </li>
@@ -7842,8 +8022,8 @@
           <code class="ruby">  config.before(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="16">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="30" data-linenumber="16">
+          <span class="hits">30</span>
           
           <code class="ruby">    DatabaseCleaner.start</code>
         </li>
@@ -7866,8 +8046,8 @@
           <code class="ruby">  config.after(:each) do</code>
         </li>
       
-        <li class="covered" data-hits="29" data-linenumber="20">
-          <span class="hits">29</span>
+        <li class="covered" data-hits="30" data-linenumber="20">
+          <span class="hits">30</span>
           
           <code class="ruby">    DatabaseCleaner.clean</code>
         </li>
