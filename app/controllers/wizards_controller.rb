@@ -1,14 +1,11 @@
 # This controller is the one in charge of the flow of the form
-class WizardController < ApplicationController
-  before_action :load_lead_wizard, except: %i[validate_step start locate]
-
-  def start; end
-
-  def locate; end
+class WizardsController < ApplicationController
+  before_action :load_lead_wizard, except: %i[validate_step]
 
   def validate_step
     current_step = params[:current_step]
     @lead_wizard = wizard_lead_for_step(current_step)
+    @lead_wizard.lead.attributes = lead_wizard_params
     session[:lead_attributes] = @lead_wizard.lead.attributes
     if @lead_wizard.valid?
       next_step = wizard_lead_next_step(current_step)
@@ -32,10 +29,6 @@ class WizardController < ApplicationController
     end
   end
 
-  def step1
-    render json: params
-  end
-
   private
 
   def load_lead_wizard
@@ -51,14 +44,16 @@ class WizardController < ApplicationController
     lead_wizard = "Wizard::Lead::#{step.camelize}"
                   .constantize
                   .new(session[:lead_attributes])
-    lead_wizard.lead.attributes = lead_wizard_params
-    lead_wizard
   end
 
   def lead_wizard_params
     params.require(:lead_wizard)
-          .permit(:email, :first_name, :last_name, :address_1, :address_2,
+          .permit(:email, :first_name, :last_name, :address,
                   :zip_code, :city, :country, :phone_number)
+  end
+
+  def well_formated_address(address)
+    address.include?(',')
   end
 
   class InvalidStep < StandardError; end

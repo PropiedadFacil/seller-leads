@@ -3,6 +3,10 @@ Rails.application.routes.draw do
   devise_for :users
   root to: 'home#index'
 
-  get '/start' => 'wizard#start'
-  get '/locate' => 'wizard#locate'
+  resource :wizard do
+    Wizard::Lead::STEPS.each do |step|
+      get step.to_sym
+    end
+    post :validate_step
+  end
 end
