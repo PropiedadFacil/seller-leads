@@ -37,27 +37,16 @@
             <%= f.input_field(:built_surface, class: 'form-control', placeholder: '1,590 sqft') %>
           </div>
 
-          <fieldset class="form-group mt-5">
-            <legend>Does your home have a pool?</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Yes, an in-ground private pool
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                Yes, an above-ground private pool
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-                No pool, or community pool
-              </label>
-            </div>
-          </fieldset>
+          <%= render 'wizards/radio_fieldset',
+                legend: 'Does your home have a pool?',
+                attribute: :pool_type,
+                form: f,
+                values: [
+                  [0, 'Yes, an in-ground private pool'],
+                  [1, 'Yes, an above-ground private pool'],
+                  [2, 'No pool, or community pool']
+                ]
+          %>
 
           <div class="form-check mt-5">
             <legend>Does your home have any of the following?</legend>
@@ -87,66 +76,38 @@
             </div>
           </div>
 
-          <fieldset class="form-group mt-5">
-            <legend>How would you rate the condition of your kitchen?</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Great condition
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-               Typical use
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-               Needs work
-              </label>
-            </div>
-          </fieldset>
+          <%= render 'wizards/radio_fieldset',
+                legend: 'How would you rate the condition of your kitchen?',
+                attribute: :kitchen_condition,
+                form: f,
+                values: [
+                  [0, 'Great condition'],
+                  [1, 'Typical use'],
+                  [2, 'Needs work']
+                ]
+          %>
 
-          <fieldset class="form-group mt-5">
-            <legend>How would you rate the condition of your bathrooms?</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Great condition
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-               Typical use
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
-               Needs work
-              </label>
-            </div>
-          </fieldset>
+          <%= render 'wizards/radio_fieldset',
+                legend: 'How would you rate the condition of your bathrooms?',
+                attribute: :bathroom_condition,
+                form: f,
+                values: [
+                  [0, 'Great condition'],
+                  [1, 'Typical use'],
+                  [2, 'Needs work']
+                ]
+          %>
 
+          <%= render 'wizards/radio_fieldset',
+                legend: 'Have you upgraded/renovated your home?',
+                attribute: :renovated,
+                form: f,
+                values: [
+                  [true, 'Yes, I have'],
+                  [false, 'No'],
+                ]
+          %>
 
-          <fieldset class="form-group mt-5">
-            <legend>Have you upgraded/renovated your home?</legend>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
-                Yes, I have
-              </label>
-            </div>
-            <div class="form-check">
-            <label class="form-check-label">
-                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
-                No
-              </label>
-            </div>
-          </fieldset>
 
           <div class="form-group">
             <label for="exampleInputEmail1">If yes, how much did you spend on renovations?</label>

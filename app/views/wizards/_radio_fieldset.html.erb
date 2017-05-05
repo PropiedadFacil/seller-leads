@@ -1,0 +1,17 @@
+<fieldset class="form-group mt-5">
+  <legend><%= legend %></legend>
+
+  <%= form.collection_radio_buttons attribute, values,
+      :first,
+      :last,
+      item_wrapper_tag: 'div',
+      item_wrapper_class: 'form-check' do |b|
+  %>
+
+      <label class="form-check-label">
+        <%= b.radio_button(class: 'form-check-input') %>
+        <%= b.text %>
+      </label>
+
+  <% end %>
+</fieldset>

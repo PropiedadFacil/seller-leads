@@ -4,12 +4,12 @@ class CreateLeads < ActiveRecord::Migration[5.1]
       t.float :lat,   null: false
       t.float :lng,   null: false
       t.string :address, null: false
-      t.integer :bedrooms, null: false
-      t.integer :bathrooms, null: false
-      t.string :built_surface, null: false
-      t.integer :pool_type,             default: 0
-      t.integer :kitchen_condition,     default: 0
-      t.integer :bathroom_condition,    default: 0
+      t.integer :bedrooms, null: false, default: 0
+      t.integer :bathrooms, null: false, default: 0
+      t.string :built_surface, null: false, default: '0 sqft'
+      t.integer :pool_type
+      t.integer :kitchen_condition
+      t.integer :bathroom_condition
       t.boolean :renovated,             default: false
       t.integer :renovated_spent_cents, default: 0
       t.text :renovated_description,    default: ''
