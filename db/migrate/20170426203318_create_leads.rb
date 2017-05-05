@@ -6,7 +6,7 @@ class CreateLeads < ActiveRecord::Migration[5.1]
       t.string :address, null: false
       t.integer :bedrooms, null: false
       t.integer :bathrooms, null: false
-      t.integer :built_surface, null: false
+      t.string :built_surface, null: false
       t.integer :pool_type,             default: 0
       t.integer :kitchen_condition,     default: 0
       t.integer :bathroom_condition,    default: 0

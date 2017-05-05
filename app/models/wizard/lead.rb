@@ -25,13 +25,15 @@ module Wizard
     end
 
     # Location step
-    class Step2 < Base
+    class Step2 < Step1
       validates :address, :lat, :lng, presence: true
     end
 
-    class Step3 < Step1
-      validates :first_name, presence: true
-      validates :last_name, presence: true
+    # Basic home information step
+    class Step3 < Step2
+      validates :bedrooms, :bathrooms, :built_surface,
+                :pool_type, :kitchen_condition, :bathroom_condition,
+                presence: true
     end
 
     class Step4 < Step2
