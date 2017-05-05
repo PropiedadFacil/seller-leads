@@ -1,3 +1,8 @@
+<% content_for :external_scripts do %>
+  <script src='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.js'></script>
+  <link href='https://api.mapbox.com/mapbox.js/v3.1.0/mapbox.css' rel='stylesheet' />
+<% end %>
+
 <div class="block block-fill-height">
 
   <%= render 'application/header', logo: 'logo-blue.png' %>
@@ -7,7 +12,7 @@
       <div class="col-sm-12">
         <div class="card card-inverse card-primary mb-3 mt-4">
           <div class="card-block">
-            <div id='map' style='width: 100%; height: 250px;'></div>
+            <div id='map' style='width: 100%; height: 250px;' data-latitude='<%= @lat %>' data-longitude='<%= @lng %>'></div>
           </div>
         </div>
       </div>
@@ -17,8 +22,7 @@
       <div class="col-sm-12">
         <div class="card mt-2 text-center">
           <div class="card-block">
-            <h3>7331 E Bonita Dr. <br>
-            Scottsdale, AZ 85250</h3>
+            <h3><%= @formatted_address %></h3>
             <p>Is this the correct address?</p>
           </div>
         </div>
@@ -29,8 +33,14 @@
       <div class="col-sm-12">
         <div class="card text-center">
           <div class="card-block">
-            <a href="basics.html" class="btn btn-success">That's Mine</a>
-            <button class="btn btn-secondary ">Edit Address</button>
+            <%= simple_form_for @lead_wizard, as: :lead_wizard, url: validate_step_wizard_path do |f| %>
+              <%= hidden_field_tag(:current_step, 'step2') %>
+              <%= f.input_field :lat, as: :hidden, value: @lat %>
+              <%= f.input_field :lng, as: :hidden, value: @lng %>
+              <%= f.submit("That's Mine", class: 'btn btn-success') %>
+              <button class="btn btn-secondary ">Edit Address</button>
+            <% end %>
+
           </div>
         </div>
       </div>

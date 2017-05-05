@@ -7,6 +7,7 @@ class WizardsController < ApplicationController
     geocoder.geocode
     @lat = geocoder.lat
     @lng = geocoder.lng
+    @formatted_address = geocoder.formatted_address
   end
 
   def validate_step
@@ -56,7 +57,7 @@ class WizardsController < ApplicationController
   def lead_wizard_params
     params.require(:lead_wizard)
           .permit(:email, :first_name, :last_name, :address,
-                  :zip_code, :city, :country, :phone_number)
+                  :lat, :lng, :phone_number)
   end
 
   def well_formated_address(address)

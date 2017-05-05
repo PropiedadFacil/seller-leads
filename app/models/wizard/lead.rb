@@ -26,7 +26,7 @@ module Wizard
 
     # Location step
     class Step2 < Base
-      validates :address, :lat, :long, presence: true
+      validates :address, :lat, :lng, presence: true
     end
 
     class Step3 < Step1

@@ -1,0 +1,170 @@
+<div class="block block-fill-height px-0">
+
+  <%= render 'application/header', logo: 'logo-blue.png' %>
+
+  <div class="container mt-2 pt-5">
+    <div class="card card-outline-primary">
+      <h3 class="card-header">
+        <ul class="nav nav-bordered">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Sale</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">Offer</a>
+          </li>
+        </ul>
+
+      </h3>
+      <div class="card-block funkybg">
+        <h4 class="card-title">Basic home information</h4>
+        <p class="card-text">Let’s start by answering a few questions about your home.</p>
+        <hr>
+
+        simple_form
+          <div class="form-group mt-5">
+            <label for="exampleInputEmail1">Bedrooms</label>
+            <input type="email" class="form-control" id="bedrooms" aria-describedby="bedrooms" placeholder="3">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">Bathrooms</label>
+            <input type="email" class="form-control" id="bedrooms" aria-describedby="bathrooms" placeholder="3">
+          </div>
+          <div class="form-group">
+            <label for="exampleInputEmail1">How big is your home</label>
+            <input type="email" class="form-control" id="homeSize" aria-describedby="homeSize" placeholder="1,590 sqft">
+          </div>
+
+          <fieldset class="form-group mt-5">
+            <legend>Does your home have a pool?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Yes, an in-ground private pool
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                Yes, an above-ground private pool
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+                No pool, or community pool
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-check mt-5">
+            <legend>Does your home have any of the following?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Leased solar panels
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Owned solar panels
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Known foundation issues
+              </label>
+            </div>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input class="form-check-input" type="checkbox" value="">
+                Gated community
+              </label>
+            </div>
+          </div>
+
+          <fieldset class="form-group mt-5">
+            <legend>How would you rate the condition of your kitchen?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Great condition
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+               Typical use
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+               Needs work
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="form-group mt-5">
+            <legend>How would you rate the condition of your bathrooms?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Great condition
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+               Typical use
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios3" value="option3">
+               Needs work
+              </label>
+            </div>
+          </fieldset>
+
+
+          <fieldset class="form-group mt-5">
+            <legend>Have you upgraded/renovated your home?</legend>
+            <div class="form-check">
+              <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios1" value="option1" checked>
+                Yes, I have
+              </label>
+            </div>
+            <div class="form-check">
+            <label class="form-check-label">
+                <input type="radio" class="form-check-input" name="optionsRadios" id="optionsRadios2" value="option2">
+                No
+              </label>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">If yes, how much did you spend on renovations?</label>
+            <input type="text" class="form-control" id="upgrades" aria-describedby="upgrades" placeholder="(enter dollar amount)">
+            <small id="emailHelp" class="form-text text-muted">Please do not count repairs or maintenance work.</small>
+          </div>
+
+          <div class="form-group">
+            <label for="exampleInputEmail1">Please provide a brief description of all updates and/or renovations.</label>
+            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+          </div>
+
+          <hr>
+          <a href="sale.html" class="btn btn-success btn-lg">Next</a>
+        </form>
+
+      </div>
+    </div>
+  </div>
+
+</div>
