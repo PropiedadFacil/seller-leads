@@ -1,0 +1,59 @@
+  <div class="block block-fill-height px-0">
+
+    <%= render 'application/header', logo: 'logo-blue.png' %>
+
+    <div class="container mt-2 pt-5">
+      <div class="card card-outline-primary">
+        <h3 class="card-header">
+          <ul class="nav nav-bordered">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Basics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Sale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Offer</a>
+            </li>
+          </ul>
+
+        </h3>
+        <div class="card-block">
+          <h4 class="card-title">Where should we send your offer?</h4>
+          <p class="card-text"><strong>Save your progress</strong> and join thousands of home owners who recive an offer from Doug Hopkins every month. </p>
+          <hr>
+
+          <h5 class="mt-5">Save progress & recive your offer.</h5>
+          <%= link_to 'Continue with Facebook', user_facebook_omniauth_authorize_path, class: 'btn btn-primary btn-lg mt-3' %>
+          <hr>
+
+          <h5 class="mt-5">Don't have facebook? Create your account below:</h5>
+
+          <form class="mt-4">
+            <div class="form-group">
+              <label for="firstName">First Name</label>
+              <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="firstName">Last Name</label>
+              <input type="text" class="form-control" id="firstName" aria-describedby="firstName" placeholder="First Name">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Email</label>
+              <input type="email" class="form-control" id="email" aria-describedby="email" placeholder="Enter your email">
+            </div>
+            <div class="form-group">
+              <label for="exampleInputEmail1">Phone</label>
+              <input type="text" class="form-control" id="phone" aria-describedby="phone" placeholder="Enter your phone">
+            </div>
+
+
+            <hr>
+            <a href="sale-continued.html"  class="btn btn-success btn-lg">Next</a>
+          </form>
+
+        </div>
+      </div>
+    </div>
+
+  </div>

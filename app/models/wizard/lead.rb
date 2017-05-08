@@ -9,6 +9,7 @@ module Wizard
 
       # Delegating every getter to the Lead
       delegate *::Lead.attribute_names.map { |attr| [attr, "#{attr}="] }.flatten, to: :lead
+      delegate :characteristics, :characteristic_ids, to: :lead
 
       def initialize(lead_attributes)
         @lead = ::Lead.new(lead_attributes)
@@ -26,25 +27,22 @@ module Wizard
 
     # Location step
     class Step2 < Step1
-      validates :address, :lat, :lng, presence: true
+      validates :lat, :lng, presence: true
     end
 
     # Basic home information step
     class Step3 < Step2
-      validates :bedrooms, :bathrooms, :built_surface,
-                :pool_type, :kitchen_condition, :bathroom_condition,
-                presence: true
+      # validates :bedrooms, :bathrooms, :built_surface,
+      #           :pool_type, :kitchen_condition, :bathroom_condition,
+      #           presence: true
     end
 
-    class Step4 < Step2
-      validates :address_1, presence: true
-      validates :zip_code, presence: true
-      validates :city, presence: true
-      validates :country, presence: true
+    class Step4 < Step3
+      validates :user_id, presence: true
     end
 
-    class Step5 < Step3
-      validates :phone_number, presence: true
+    class Step5 < Step4
+      # validates :phone_number, presence: true
     end
   end
 end

@@ -32,18 +32,21 @@ gem 'figaro'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+gem 'omniauth-facebook'
+
 gem 'simple_form'
 
 group :development, :test do
   gem 'awesome_print'
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   gem 'capybara', '~> 2.13.0'
+  gem 'capybara-webkit'
   gem 'dotenv-rails'
   gem 'factory_girl'
   gem 'faker'
+  gem 'rack_session_access'
   gem 'rails-controller-testing'
   gem 'rspec-rails', '~> 3.5'
-  gem 'selenium-webdriver'
   gem 'shoulda-matchers'
 end
 

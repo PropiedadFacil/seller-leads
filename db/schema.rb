@@ -10,10 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170426222630) do
+ActiveRecord::Schema.define(version: 20170507233751) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "characteristics", force: :cascade do |t|
+    t.string "name"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  create_table "characteristics_leads", id: false, force: :cascade do |t|
+    t.bigint "lead_id", null: false
+    t.bigint "characteristic_id", null: false
+    t.index ["characteristic_id", "lead_id"], name: "index_characteristics_leads_on_characteristic_id_and_lead_id"
+    t.index ["lead_id", "characteristic_id"], name: "index_characteristics_leads_on_lead_id_and_characteristic_id"
+  end
 
   create_table "leads", force: :cascade do |t|
     t.float "lat", null: false
@@ -26,16 +39,20 @@ ActiveRecord::Schema.define(version: 20170426222630) do
     t.integer "kitchen_condition"
     t.integer "bathroom_condition"
     t.boolean "renovated", default: false
-    t.integer "renovated_spent_cents", default: 0
     t.text "renovated_description", default: ""
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
+    t.string "renovated_spent", default: ""
+    t.integer "timeline_to_sell"
+    t.integer "looking_for_another"
+    t.integer "reasons_for_selling"
+    t.string "own_valuation", default: ""
+    t.text "anything_else", default: ""
     t.index ["user_id"], name: "index_leads_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
-    t.string "name"
     t.string "email"
     t.string "encrypted_password"
     t.integer "role", default: 0
@@ -50,6 +67,10 @@ ActiveRecord::Schema.define(version: 20170426222630) do
     t.inet "current_sign_in_ip"
     t.inet "last_sign_in_ip"
     t.string "password_salt"
+    t.string "provider"
+    t.string "uid"
+    t.string "first_name", null: false
+    t.string "last_name"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

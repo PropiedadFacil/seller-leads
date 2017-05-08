@@ -42,38 +42,30 @@
                 attribute: :pool_type,
                 form: f,
                 values: [
-                  [0, 'Yes, an in-ground private pool'],
-                  [1, 'Yes, an above-ground private pool'],
-                  [2, 'No pool, or community pool']
+                  ['in_ground', 'Yes, an in-ground private pool'],
+                  ['above_ground', 'Yes, an above-ground private pool'],
+                  ['none_or_community', 'No pool, or community pool']
                 ]
           %>
 
+
           <div class="form-check mt-5">
             <legend>Does your home have any of the following?</legend>
-            <div class="form-check">
+
+            <%= f.collection_check_boxes :characteristic_ids,
+                  Characteristic.all.map{|c| [c.id, c.name]},
+                  :first,
+                  :last,
+                  item_wrapper_tag: 'div',
+                  item_wrapper_class: 'form-check' do |b|
+            %>
+
               <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
-                Leased solar panels
+                <%= b.check_box(class: 'form-check-input') %>
+                <%= b.text %>
               </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
-                Owned solar panels
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
-                Known foundation issues
-              </label>
-            </div>
-            <div class="form-check">
-              <label class="form-check-label">
-                <input class="form-check-input" type="checkbox" value="">
-                Gated community
-              </label>
-            </div>
+
+            <% end %>
           </div>
 
           <%= render 'wizards/radio_fieldset',
@@ -81,9 +73,9 @@
                 attribute: :kitchen_condition,
                 form: f,
                 values: [
-                  [0, 'Great condition'],
-                  [1, 'Typical use'],
-                  [2, 'Needs work']
+                  ['great_kitchen', 'Great condition'],
+                  ['typical_kitchen', 'Typical use'],
+                  ['needs_work_kitchen', 'Needs work']
                 ]
           %>
 
@@ -92,9 +84,9 @@
                 attribute: :bathroom_condition,
                 form: f,
                 values: [
-                  [0, 'Great condition'],
-                  [1, 'Typical use'],
-                  [2, 'Needs work']
+                  ['great_bathroom', 'Great condition'],
+                  ['typical_bathroom', 'Typical use'],
+                  ['needs_work_bathroom', 'Needs work']
                 ]
           %>
 
@@ -110,14 +102,14 @@
 
 
           <div class="form-group">
-            <label for="exampleInputEmail1">If yes, how much did you spend on renovations?</label>
-            <input type="text" class="form-control" id="upgrades" aria-describedby="upgrades" placeholder="(enter dollar amount)">
+            <%= f.label(:renovated_spent, 'If yes, how much did you spend on renovations?') %>
+            <%= f.input_field(:renovated_spent, class: 'form-control', placeholder: '(enter dollar amount)') %>
             <small id="emailHelp" class="form-text text-muted">Please do not count repairs or maintenance work.</small>
           </div>
 
           <div class="form-group">
-            <label for="exampleInputEmail1">Please provide a brief description of all updates and/or renovations.</label>
-            <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+            <%= f.label(:renovated_description, 'Please provide a brief description of all updates and/or renovations.') %>
+            <%= f.text_area(:renovated_description, class: 'form-control', placeholder: '', rows: 3)%>
           </div>
 
           <hr>

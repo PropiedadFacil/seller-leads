@@ -107,9 +107,9 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 20
 
   # Set up a pepper to generate the hashed password.
-  config.pepper = Figaro.env[:pepper]
+  config.pepper = Figaro.env['pepper']
 
-  config.secret_key = Figaro.env[:devise_secret]
+  config.secret_key = Figaro.env['devise_secret']
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -252,6 +252,19 @@ Devise.setup do |config|
   # Add a new OmniAuth provider. Check the wiki for more information on setting
   # up on your models and hooks.
   # config.omniauth :github, 'APP_ID', 'APP_SECRET', scope: 'user,public_repo'
+
+  config.omniauth :facebook,
+                  ENV['fb_app_id'],
+                  ENV['fb_app_secret'],
+                  scope: 'email,public_profile',
+                  info_fields: 'email,first_name,last_name',
+                  callback_url: "#{ENV['root_url']}/users/auth/facebook/callback",
+                  token_params: { parse: :json },
+                  client_options: {
+                    site: 'https://graph.facebook.com/v2.8',
+                    authorize_url: 'https://www.facebook.com/v2.8/dialog/oauth'
+                  }
+
 
   # ==> Warden configuration
   # If you want to use other strategies, that are not supported by Devise, or

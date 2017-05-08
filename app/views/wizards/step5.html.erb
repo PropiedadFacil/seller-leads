@@ -1,0 +1,85 @@
+  <div class="block block-fill-height px-0">
+
+    <%= render 'application/header', logo: 'logo-blue.png' %>
+
+    <div class="container mt-2 pt-5">
+      <div class="card card-outline-primary">
+        <h3 class="card-header">
+          <ul class="nav nav-bordered">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Basics</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link active" href="#">Sale</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Offer</a>
+            </li>
+          </ul>
+
+        </h3>
+        <div class="card-block">
+          <h4 class="card-title">About your sale?</h4>
+          <p class="card-text"><strong>Last Step!</strong> Tell us a little about your timeline.</p>
+          <hr>
+          <%= simple_form_for @lead_wizard, as: :lead_wizard, url: validate_step_wizard_path do |f| %>
+
+            <%= render 'wizards/radio_fieldset',
+                  legend: "What's your timeline to sell?",
+                  attribute: :timeline_to_sell,
+                  form: f,
+                  values: [
+                    ['asap', 'ASAP'],
+                    ['2_4_weeks', '2-4 weeks'],
+                    ['4_6_weeks', '4-6 weeks'],
+                    ['few_months', 'A few months'],
+                    ['just_curious', 'Just curious']
+                  ]
+            %>
+
+            <%= render 'wizards/radio_fieldset',
+                  legend: "Are you already looking for another home?",
+                  attribute: :looking_for_another,
+                  form: f,
+                  values: [
+                    ['yes', "Yes, I'm looking"],
+                    ['already_found', 'I already found a place'],
+                    ['not', "I'm not looking"]
+                  ]
+            %>
+
+            <%= render 'wizards/radio_fieldset',
+                  legend: "Optional: select reasons for selling:",
+                  attribute: :reasons_for_selling,
+                  form: f,
+                  values: [
+                    ['upgrading', "Upgrading home or neigborhood"],
+                    ['relocating', 'Relocating for work'],
+                    ['downsizing', 'Downsizing'],
+                    ['retiring', 'Retiring'],
+                    ['selling_investment', 'Selling my vacation/investment property'],
+                  ]
+            %>
+
+
+            <div class="form-group mt-2">
+              <%= f.label(:own_valuation, 'Optional: How much do you think your home is worth?') %>
+              <%= f.input_field(:own_valuation, class: 'form-control', placeholder: '(enter dollar amount)') %>
+            </div>
+
+            <div class="form-group">
+              <%= f.label(:anything_else, 'Optional: Would you like to tell us anything else about your home?') %>
+              <%= f.text_area(:anything_else, class: 'form-control', placeholder: 'For example you can tell use about your upgrades, a nice view the property has, or any major repairs you think are needed.', rows: 3)%>
+            </div>
+
+
+            <hr>
+            <%= hidden_field_tag(:current_step, 'step5') %>
+            <%= f.submit('Finish & Recive Offer!', class: 'btn btn-success btn-lg') %>
+          <% end %>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
