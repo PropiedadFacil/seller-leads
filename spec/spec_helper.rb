@@ -19,6 +19,8 @@
 
 require 'capybara/rspec'
 require 'rack_session_access/capybara'
+require 'support/omniauth_macros'
+require 'omniauth'
 
 require 'simplecov'
 SimpleCov.start
@@ -104,4 +106,6 @@ RSpec.configure do |config|
   # as the one that triggered the failure.
   Kernel.srand config.seed
 =end
+  config.include(OmniauthMacros)
 end
+OmniAuth.config.test_mode = true

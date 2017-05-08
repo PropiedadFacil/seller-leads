@@ -2,14 +2,7 @@ require 'spec_helper'
 
 feature 'Step 3' do
   before(:each) do
-    session = {
-      lead_attributes: {
-        address: '7331 E Bonita Dr, Scottsdale',
-        lat: 39.123123,
-        lng: -123.1234
-      }
-    }
-    page.set_rack_session(session)
+    set_step3
     visit '/wizard/step3'
   end
 
@@ -40,5 +33,4 @@ feature 'Step 3' do
     click_button 'Next'
     expect(page).to have_text('Where should we send your offer?')
   end
-
 end

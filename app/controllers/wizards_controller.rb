@@ -1,6 +1,7 @@
 # This controller is the one in charge of the flow of the form
 class WizardsController < ApplicationController
   before_action :load_lead_wizard, except: %i[validate_step]
+  before_action :store_current_location, except: %i[validate_step]
 
   def step2
     geocoder = Geocoder.new(@lead_wizard.lead.address)
@@ -11,6 +12,7 @@ class WizardsController < ApplicationController
   end
 
   def step4
+    pp session.keys
     if current_user
       params[:current_step] = 'step4'
       params[:lead_wizard] = @lead_wizard.lead.attributes
@@ -24,12 +26,12 @@ class WizardsController < ApplicationController
     @lead_wizard = wizard_lead_for_step(current_step)
     @lead_wizard.lead.attributes = lead_wizard_params
     session[:lead_attributes] = @lead_wizard.lead.attributes
-    # return render json: session[:lead_attributes]
     if @lead_wizard.valid?
       next_step = wizard_lead_next_step(current_step)
       create && return unless next_step
       redirect_to action: next_step
     else
+      pp @lead_wizard.errors.inspect
       render current_step
     end
   end
@@ -47,6 +49,10 @@ class WizardsController < ApplicationController
   end
 
   private
+
+  def store_current_location
+    store_location_for(:user, request.url)
+  end
 
   def load_lead_wizard
     @lead_wizard = wizard_lead_for_step(action_name)

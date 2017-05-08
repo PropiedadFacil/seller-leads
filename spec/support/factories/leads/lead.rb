@@ -8,7 +8,7 @@ FactoryGirl.define do
     kitchen_condition Lead.kitchen_conditions.keys.sample
     bathroom_condition Lead.bathroom_conditions.keys.sample
     renovated true
-    renovated_spent_cents Faker::Number.number(10)
+    renovated_spent Faker::Number.number(10).to_s
     renovated_description Faker::Lorem.sentence(Faker::Number.digit.to_i)
     bedrooms Faker::Number.digit.to_i
     bathrooms Faker::Number.digit.to_i

@@ -35,5 +35,4 @@ describe Lead do
     lead = FactoryGirl.build(:lead, user_id: nil)
     expect(lead).to be_invalid
   end
-
 end
