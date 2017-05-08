@@ -7,6 +7,7 @@ $(document).ready(function() {
     var longitude = mapContainer.data('longitude')
     var map = L.mapbox.map('map', 'mapbox.streets').setView([latitude, longitude], 15);
     L.marker([latitude, longitude]).addTo(map);
+    map.scrollWheelZoom.disable();
   }
 });
 

@@ -1,5 +1,7 @@
+<% transparent = false unless defined? transparent %>
+
 <% if current_user %>
-  <%= render 'application/header_logged_in', logo: logo %>
+  <%= render 'application/header_logged_in', logo: logo, transparent: transparent %>
 <% else %>
-  <%= render 'application/header_logged_out', logo: logo %>
+  <%= render 'application/header_logged_out', logo: logo, transparent: transparent %>
 <% end %>
